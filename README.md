@@ -89,7 +89,7 @@ pyinstaller --onedir --name LogDashboard --add-data "logdashboard/resources;logd
 This creates a dist/LogDashboard folder containing the executable.
 
 Project Structure
-`
+```
 logdashboard/
 ├── main.py
 ├── __init__.py
@@ -109,6 +109,6 @@ logdashboard/
 │   └── main_window.py    # Main application window
 ├── utilities/            # Utility scripts and HTML templates
 └── venv/                 # Virtual environment folder
-`
-Contributing
-Contributions are welcome! If you wish to enhance the application, please open an issue or submit a pull request. Make sure to follow existing code style and update tests as necessary.
+```
+#Contributing
+>Contributions are welcome! If you wish to enhance the application, please open an issue or submit a pull request. Make sure to follow existing code style and update tests as necessary.

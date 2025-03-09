@@ -30,37 +30,37 @@
 
 1. **Clone the repository:**
 
-   ```
-   git clone https://github.com/yourusername/LogDashboard.git
-   cd LogDashboard
-  ```
+`
+git clone https://github.com/yourusername/LogDashboard.git
+cd LogDashboard
+`
 
 2. **Create and activate a virtual environment:**
 
 - **On Windows:**
 
-  ```
-  python -m venv venv
-  venv\Scripts\activate
-  ```
+`
+python -m venv venv
+venv\Scripts\activate
+`
 
 - **On macOS/Linux:**
 
-  ```
-  python3 -m venv venv
-  source venv/bin/activate
-  ```
+`
+python3 -m venv venv
+source venv/bin/activate
+`
 3. **Install dependencies:**
 
-  ```
-  pip install -r requirements.txt
-  ```
+`
+pip install -r requirements.txt
+`
 
 4. **Run the application:**
 
-  ```
-  python logdashboard/main.py
-  ```
+`
+python logdashboard/main.py
+`
 
 ## Usage
 **Module Selection:**  
@@ -87,7 +87,7 @@ pyinstaller --onedir --name LogDashboard --add-data "logdashboard/resources;logd
 This creates a dist/LogDashboard folder containing the executable.
 
 Project Structure
-```
+`
 logdashboard/
 ├── main.py
 ├── __init__.py
@@ -107,6 +107,6 @@ logdashboard/
 │   └── main_window.py    # Main application window
 ├── utilities/            # Utility scripts and HTML templates
 └── venv/                 # Virtual environment folder
-```
+`
 Contributing
 Contributions are welcome! If you wish to enhance the application, please open an issue or submit a pull request. Make sure to follow existing code style and update tests as necessary.

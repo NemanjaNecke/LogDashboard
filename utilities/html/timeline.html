@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timeline</title>
+  <!-- Load Plotly from CDN -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Load the Qt WebChannel script -->
+  <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #1e1e1e;
+      color: #ccc;
+    }
+  </style>
+  <script type="text/javascript">
+    var bridge = null;
+    // Initialize QWebChannel once the DOM is loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      new QWebChannel(qt.webChannelTransport, function (channel) {
+        bridge = channel.objects.bridge;
+        console.log("QWebChannel connected.");
+        setupPlotlyClickHandler(); // Set up click handler after channel is ready
+      });
+    });
+    
+    // Function to attach a Plotly click event to the chart
+    function setupPlotlyClickHandler() {
+      var plotDiv = document.getElementById('plotly-div');
+      if (plotDiv && Plotly) {
+        // Remove any existing 'plotly_click' handlers to prevent duplicates
+        Plotly.d3.select(plotDiv).on('plotly_click', null);
+        
+        plotDiv.on('plotly_click', function(data) {
+          if (bridge && data.points && data.points.length > 0) {
+            var xValue = data.points[0].x;
+            bridge.onPlotlyClick(String(xValue));
+            console.log("Plotly clicked at x =", xValue);
+          } else {
+            console.warn("Bridge not connected or no data point found.");
+          }
+        });
+        console.log("Plotly click handler set up.");
+      } else {
+        console.error("Plotly or plotDiv not found.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- This placeholder will be replaced with the Plotly chart HTML -->
+  {{plot}}
+</body>
+</html>

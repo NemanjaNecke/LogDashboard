@@ -30,27 +30,27 @@
 
 1. **Clone the repository:**
 
-   ```bash
+   ```
    git clone https://github.com/yourusername/LogDashboard.git
    cd LogDashboard
   ```
 Create and activate a virtual environment:
 
 On Windows:
-```bash
+```
 
 python -m venv venv
 venv\Scripts\activate
 ```
 On macOS/Linux:
-``bash
+```
 
 python3 -m venv venv
 source venv/bin/activate
 ```
 Install dependencies:
 
-```bash
+```
 
 pip install -r requirements.txt
 Run the application:
@@ -75,15 +75,13 @@ The IIS module includes analysis tools. You can run log analysis, generate Excel
 Building an Executable
 To build a standalone executable using PyInstaller, run the following command from the folder that contains the logdashboard folder:
 
-```bash
-
+```
 pyinstaller --onedir --name LogDashboard --add-data "logdashboard/resources;logdashboard/resources" --add-data "logdashboard/utilities/html;logdashboard/utilities/html" logdashboard/main.py
 ```
 This creates a dist/LogDashboard folder containing the executable.
 
 Project Structure
-bash
-Копирај
+```
 logdashboard/
 ├── main.py
 ├── __init__.py
@@ -103,5 +101,6 @@ logdashboard/
 │   └── main_window.py    # Main application window
 ├── utilities/            # Utility scripts and HTML templates
 └── venv/                 # Virtual environment folder
+```
 Contributing
 Contributions are welcome! If you wish to enhance the application, please open an issue or submit a pull request. Make sure to follow existing code style and update tests as necessary.

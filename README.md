@@ -37,26 +37,27 @@
 Create and activate a virtual environment:
 
 On Windows:
-```
 
+
+```
 python -m venv venv
 venv\Scripts\activate
 ```
 On macOS/Linux:
-```
 
-python3 -m venv venv
+
+```python3 -m venv venv
 source venv/bin/activate
 ```
 Install dependencies:
 
 ```
-
 pip install -r requirements.txt
 Run the application:
 ```
-```bash
 
+
+```
 python logdashboard/main.py
 ```
 Usage

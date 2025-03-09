@@ -35,50 +35,51 @@
    cd LogDashboard
   ```
 
-Create and activate a virtual environment:
+2. **Create and activate a virtual environment:**
 
-On Windows:
+- **On Windows:**
 
-```
-python -m venv venv
-venv\Scripts\activate
-```
+  ```
+  python -m venv venv
+  venv\Scripts\activate
+  ```
 
+- **On macOS/Linux:**
 
-On macOS/Linux:
+  ```
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
+3. **Install dependencies:**
 
+  ```
+  pip install -r requirements.txt
+  ```
 
-```
-python3 -m venv venv
-source venv/bin/activate
-```
-Install dependencies:
+4. **Run the application:**
 
-```
-pip install -r requirements.txt
-Run the application:
-```
+  ```
+  python logdashboard/main.py
+  ```
 
-
-```
-python logdashboard/main.py
-```
-
-Usage
-Module Selection:
+## Usage
+**Module Selection:**  
 When you start the application, a dialog will prompt you to choose which modules to load (IIS, EVTX, GENERIC). The Timeline, DB Manager, and Log Dock are always available.
 
-Opening Logs:
+**Opening Logs:**
 
-Use the File menu to open log files or databases.
-The IIS menu allows you to open and analyze IIS logs.
-The EVTX menu provides options for EVTX logs.
-The GENERIC menu is for custom log types.
-Analysis and Reporting:
+- Use the **File** menu to open log files or databases.
+- The **IIS** menu allows you to open and analyze IIS logs.
+- The **EVTX** menu provides options for EVTX logs.
+- The **GENERIC** menu is for custom log types.
+
+**Analysis and Reporting:**  
 The IIS module includes analysis tools. You can run log analysis, generate Excel reports, select specific sheets, and compare report data—all from within the application.
 
-Building an Executable
-To build a standalone executable using PyInstaller, run the following command from the folder that contains the logdashboard folder:
+## Building an Executable
+
+To build a standalone executable using PyInstaller, run the following command from the folder that contains the `logdashboard` folder:
+
 
 ```
 pyinstaller --onedir --name LogDashboard --add-data "logdashboard/resources;logdashboard/resources" --add-data "logdashboard/utilities/html;logdashboard/utilities/html" logdashboard/main.py

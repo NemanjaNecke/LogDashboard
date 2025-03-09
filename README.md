@@ -50,6 +50,7 @@ venv\Scripts\activate
 python3 -m venv venv
 source venv/bin/activate
 `
+
 3. **Install dependencies:**
 
 `
@@ -74,16 +75,17 @@ When you start the application, a dialog will prompt you to choose which modules
 - The **GENERIC** menu is for custom log types.
 
 **Analysis and Reporting:**  
-The IIS module includes analysis tools. You can run log analysis, generate Excel reports, select specific sheets, and compare report data—all from within the application.
+>The IIS module includes analysis tools. You can run log analysis, generate Excel reports, select specific sheets, and compare report data—all from within the application.
 
 ## Building an Executable
 
 To build a standalone executable using PyInstaller, run the following command from the folder that contains the `logdashboard` folder:
 
 
-```
+`
 pyinstaller --onedir --name LogDashboard --add-data "logdashboard/resources;logdashboard/resources" --add-data "logdashboard/utilities/html;logdashboard/utilities/html" logdashboard/main.py
-```
+`
+
 This creates a dist/LogDashboard folder containing the executable.
 
 Project Structure
